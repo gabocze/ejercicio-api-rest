@@ -24,7 +24,7 @@ public class Person {
   @Column(name="ID")
   private long id;
 
-  @ManyToMany(cascade= {CascadeType.ALL})
+  @ManyToMany(cascade= {CascadeType.ALL}/*, mappedBy = "titulares"*/)
   //@JoinColumn(name="persona_id")
   private Collection<CuentaCorriente> cuentaCorriente;
 

@@ -29,7 +29,7 @@ public class CuentaCorriente {
   private long numero;
   @Column(name="SALDO")
   private double saldo;
-  @ManyToMany(cascade= {CascadeType.ALL}, mappedBy = "cuentaCorriente.id")
+  @ManyToMany(cascade= {CascadeType.ALL}/*, mappedBy = "cuentaCorriente"*/)
   //@JoinColumn(name="cuenta_id")
   private Collection<Person> titulares;
   
