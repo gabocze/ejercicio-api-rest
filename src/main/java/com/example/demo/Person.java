@@ -41,6 +41,18 @@ public class Person {
 		this.id = id;
 	}
 
+	public Person(Integer id, String CUIL)
+	{
+		this(id);
+		this.CUIL = CUIL;
+	}
+
+	public Person(Integer id, String CUIL, CuentaCorriente cuentaCorriente)
+	{
+		this(id, CUIL);
+		if(cuentaCorriente!=null)
+			this.getCuentaCorriente().add(cuentaCorriente);
+	}
 	public Person(Integer id, Collection<CuentaCorriente> cuentaCorriente)
 	{
 		super();

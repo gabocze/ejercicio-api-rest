@@ -37,6 +37,14 @@ public class PersonaJuridica extends Person {
 		this.razonSocial = razonSocial;
 		this.fechaCreacion = fechaCreacion;
 	}
+	public PersonaJuridica(Integer id, String razonSocial, Date fechaCreacion, String CUIL, CuentaCorriente cuentaCorriente)
+	{
+		super(id,CUIL,cuentaCorriente);
+		this.id = id;
+		this.razonSocial = razonSocial;
+		this.fechaCreacion = fechaCreacion;
+	}
+
   public String getRazonSocial() {
     return razonSocial;
   }

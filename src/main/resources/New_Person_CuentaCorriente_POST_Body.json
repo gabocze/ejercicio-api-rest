@@ -1,0 +1,26 @@
+// Creación de Cuenta Corriente: http://localhost:8080/cuentaCorrientes
+
+{
+"numero": "55275",
+"saldo": "12620.45"
+}
+
+
+
+// Creación de persona jurídica con cuenta corriente: http://localhost:8080/personaJuridicas
+
+{
+"razonSocial": "DEF", 
+"fechaCreacion": "2015-07-04", 
+"CUIL": "23-77897612-0", 
+"cuentaCorriente": ["http://localhost:8080/cuentaCorrientes/1"]
+}
+
+
+// Creación de persona jurídica (con "cuil" en minúscula): http://localhost:8080/personaJuridicas
+
+{
+"razonSocial": "XYZ", 
+"fechaCreacion": "2019-07-04", 
+"cuil": "20-22012345-0" 
+}

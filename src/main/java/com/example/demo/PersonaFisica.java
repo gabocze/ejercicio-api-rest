@@ -35,6 +35,13 @@ public class PersonaFisica extends Person {
 		this.firstName = firstname;
 		this.lastName = lastname;
 	}
+	public PersonaFisica(Integer id, String firstname, String lastname, String CUIL, CuentaCorriente cuentaCorriente)
+	{
+		super(id, CUIL, cuentaCorriente);
+		this.id = id;
+		this.firstName = firstname;
+		this.lastName = lastname;
+	}
   public String getFirstName() {
     return firstName;
   }
