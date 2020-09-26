@@ -1,4 +1,4 @@
-// Creación de Cuenta Corriente: http://localhost:8080/cuentaCorrientes
+// Creación de Cuenta Corriente: POST http://localhost:8080/cuentaCorrientes
 
 {
 "numero": "55275",
@@ -7,20 +7,36 @@
 
 
 
-// Creación de persona jurídica con cuenta corriente: http://localhost:8080/personaJuridicas
+// Creación de persona jurídica con cuenta corriente: POST http://localhost:8080/personaJuridicas
 
 {
 "razonSocial": "DEF", 
 "fechaCreacion": "2015-07-04", 
-"CUIL": "23-77897612-0", 
+"cuil": "23-77897612-0", 
 "cuentaCorriente": ["http://localhost:8080/cuentaCorrientes/1"]
 }
 
 
-// Creación de persona jurídica (con "cuil" en minúscula): http://localhost:8080/personaJuridicas
+// Creación de persona jurídica: POST http://localhost:8080/personaJuridicas
 
 {
 "razonSocial": "XYZ", 
 "fechaCreacion": "2019-07-04", 
 "cuil": "20-22012345-0" 
+}
+
+
+// Agregación de una persona jurídica a una cuenta corriente: PATCH http://localhost:8080/personaJuridicas/{x.id : x={"razonSocial"="XYZ",...}}
+{
+"cuentaCorriente": ["http://localhost:8080/cuentaCorrientes/1"]
+}
+
+
+// Creación de una persona física con una cuenta corriente existente: POST http://localhost:8080/personaFisicas
+
+{
+"firstName": "María",
+"lastName": "Cristal",
+"cuil": "27-34178223-0",
+"cuentaCorriente": ["http://localhost:8080/cuentaCorrientes/1"]
 }
