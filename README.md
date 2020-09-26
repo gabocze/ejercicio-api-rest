@@ -1,0 +1,2 @@
+- Forma de acceder a la app: https://ejercicio-api-rest.herokuapp.com/.
+- Los mensajes (JSON) que entiende la app tienen un formato a conocer a partir del siguiente recurso que se sirve como ejemplo: https://github.com/gabocze/ejercicio-api-rest/blob/master/src/main/resources/New_Person_CuentaCorriente_POST_Body.json (reemplazando localhost por ejercicio-api-rest.herokuapp.com).
