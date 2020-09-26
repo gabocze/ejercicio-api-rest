@@ -35,8 +35,52 @@
 // Creación de una persona física con una cuenta corriente existente: POST http://localhost:8080/personaFisicas
 
 {
-"firstName": "María",
+"firstName": "Mar&iacute;a",
 "lastName": "Cristal",
 "cuil": "27-34178223-0",
 "cuentaCorriente": ["http://localhost:8080/cuentaCorrientes/1"]
+}
+
+
+// Test de restricciones de formato, longitud y obligatoriedad de los atributos
+
+// Test CUIL obligatorio, no informado. Resultado esperado: no permite la operación si CUIL es vacío
+// POST http://localhost:8080/personaFisicas
+{
+"firstName": "Juan",
+"lastName": "Castro"
+}
+
+
+// Test firstName > 80 caracteres. Resultado esperado: no permite firstName > 80 caracteres
+// POST http://localhost:8080/personaFisicas
+{
+"firstName": "Juan Roberto Arnoldo Ricardo Sebasti&aacute;n Facundo Pablo Luis Fernando Rodolfo Agust&iacute;n Enrique Ramiro Jorge",
+"lastName": "Castro",
+"cuil": "20-33203023-0"
+}
+
+// Test fecha con formato "DD/MM/AA". El formato original es "yyyy-mm-dd". Resultado esperado: sólo permite fechas con el formato original, no permite "DD/MM/AA" por ser un formato diferente al original.
+// POST http://localhost:8080/personaJuridicas
+{
+"razonSocial": "PARAGUAS BUENOS", 
+"fechaCreacion": "01/01/97", 
+"cuil": "20-24605790-1"
+}
+
+
+// Test unicidad del cuil. Resultado esperado: rechaza cualquier CUIL que sea igual a otro que ya existe en la base de datos.
+
+// POST http://localhost:8080/personaJuridicas
+{
+"razonSocial": "Salud Bienestar", 
+"fechaCreacion": "1980-09-15", 
+"cuil": "20-40506070-1"
+}
+
+// POST http://localhost:8080/personaJuridicas
+{
+"razonSocial": "Ra&uacute;l Rojas y Hnos.", 
+"fechaCreacion": "2006-08-01", 
+"cuil": "20-40506070-1"
 }
