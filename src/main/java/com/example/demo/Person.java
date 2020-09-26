@@ -28,7 +28,7 @@ public class Person {
   //@JoinColumn(name="persona_id")
   private Collection<CuentaCorriente> cuentaCorriente;
 
-  @Column(name="CUIL")
+  @Column(name="CUIL", nullable = false, unique = true)
   private String CUIL;
 	public Person()
 	{

@@ -21,7 +21,7 @@ public class PersonaJuridica extends Person {
   @Column(name="ID")
   private long id;
 
-  @Column(name="RAZON_SOCIAL")
+  @Column(name="RAZON_SOCIAL", length=100)
   private String razonSocial;
   @Column(name="FECHA_CREACION")
   private Date fechaCreacion;

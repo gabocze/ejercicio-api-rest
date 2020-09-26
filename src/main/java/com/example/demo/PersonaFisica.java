@@ -19,9 +19,9 @@ public class PersonaFisica extends Person {
   @Column(name="ID")
   private long id;
 
-  @Column(name="FIRSTNAME")
+  @Column(name="FIRSTNAME", length = 80)
   private String firstName;
-  @Column(name="LASTNAME")
+  @Column(name="LASTNAME", length = 250)
   private String lastName;
 	public PersonaFisica()
 	{
@@ -37,7 +37,7 @@ public class PersonaFisica extends Person {
 	}
 	public PersonaFisica(Integer id, String firstname, String lastname, String CUIL, CuentaCorriente cuentaCorriente)
 	{
-		super(id, CUIL, cuentaCorriente);
+		super(id, CUIL);
 		this.id = id;
 		this.firstName = firstname;
 		this.lastName = lastname;
